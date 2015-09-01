@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "23.0.0"
+    defaultConfig {
+        applicationId "com.exacttarget.alamotte.lamotte_app4"
+        minSdkVersion 10
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    // ET SDK
+    compile 'com.exacttarget.etpushsdk:etsdk:4.0.4@aar'
+    // Google Play Services for Location and Google Cloud Messaging
+    compile 'com.google.android.gms:play-services-location:7.8.0'
+    compile 'com.google.android.gms:play-services-gcm:7.8.0'
+    // Google's Support v4 for Notification compatibility
+    compile 'com.android.support:support-v4:22.2.1'
+
+    compile 'com.radiusnetworks:AndroidIBeaconLibrary:0.7.6'
+}
